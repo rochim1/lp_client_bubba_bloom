@@ -73,7 +73,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::nVaMC7tgZ9JbE8vQ',
+            '_route' => 'generated::ea94UvrRPe7IgYoA',
           ),
           1 => NULL,
           2 => 
@@ -322,7 +322,7 @@ app('router')->setCompiledRoutes(
         \'paymentUrl\' => \\config(\'landing.payment_url\', \'https://app.pantoo.id/hrms/billing\'),
         \'brandName\' => \\config(\'app.name\', \'Pantoo\'),
     ]);
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"000000000000049d0000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002c40000000000000000";}}',
         'as' => 'landing.subscription.expired',
       ),
       'fallback' => false,
@@ -358,7 +358,7 @@ app('router')->setCompiledRoutes(
 
     return \\response(\\implode("\\n", $lines) . "\\n", 200)
         ->header(\'Content-Type\', \'text/plain; charset=UTF-8\');
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004a10000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002c80000000000000000";}}',
         'as' => 'landing.robots',
       ),
       'fallback' => false,
@@ -399,7 +399,7 @@ app('router')->setCompiledRoutes(
 
     $xml = \\view(\'partials.sitemap\', [\'urls\' => $urls])->render();
     return \\response($xml, 200)->header(\'Content-Type\', \'application/xml; charset=UTF-8\');
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004a30000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002ca0000000000000000";}}',
         'as' => 'landing.sitemap',
       ),
       'fallback' => false,
@@ -416,7 +416,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::nVaMC7tgZ9JbE8vQ' => 
+    'generated::ea94UvrRPe7IgYoA' => 
     array (
       'methods' => 
       array (
@@ -426,7 +426,7 @@ app('router')->setCompiledRoutes(
       'uri' => '/',
       'action' => 
       array (
-        'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:17616:"function () {
+        'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:17668:"function () {
     $client = new \\App\\Services\\GraphQLClient();
 
     $query = <<<\'GRAPHQL\'
@@ -660,6 +660,7 @@ app('router')->setCompiledRoutes(
             address { fullAddress googleMapsLink }
             phones { type number displayNumber isWhatsapp whatsappUrl }
             emails { type email }
+            socialMedia { platform label url icon }
           }
           GetActivePopups {
             _id
@@ -945,8 +946,8 @@ app('router')->setCompiledRoutes(
         \'seo\' => $seo,
         \'activePopups\' => \\is_array($activePopups) ? $activePopups : [],
     ]);
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004a50000000000000000";}}',
-        'as' => 'generated::nVaMC7tgZ9JbE8vQ',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002cc0000000000000000";}}',
+        'as' => 'generated::ea94UvrRPe7IgYoA',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1069,7 +1070,7 @@ app('router')->setCompiledRoutes(
         \'backUrl\' => \\url(\'/\'),
         \'backLabel\' => \'Beranda\',
     ]));
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004a70000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002ce0000000000000000";}}',
         'as' => 'landing.news.index',
       ),
       'fallback' => false,
@@ -1138,7 +1139,7 @@ app('router')->setCompiledRoutes(
         \'backUrl\' => \\url(\'/\'),
         \'backLabel\' => \'Beranda\',
     ]));
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004a90000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002d00000000000000000";}}',
         'as' => 'landing.gallery.index',
       ),
       'fallback' => false,
@@ -1262,7 +1263,7 @@ app('router')->setCompiledRoutes(
         \'backUrl\' => \\url(\'/\'),
         \'backLabel\' => \'Beranda\',
     ]));
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004ab0000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002d20000000000000000";}}',
         'as' => 'landing.faq.index',
       ),
       'fallback' => false,
@@ -1342,7 +1343,7 @@ app('router')->setCompiledRoutes(
         \'backUrl\' => \\url(\'/#events\'),
         \'backLabel\' => \'Kembali ke Event\',
     ]));
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004ad0000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002d40000000000000000";}}',
         'as' => 'landing.event.detail',
       ),
       'fallback' => false,
@@ -1424,7 +1425,7 @@ app('router')->setCompiledRoutes(
         \'backUrl\' => \\route(\'landing.news.index\'),
         \'backLabel\' => \'Kembali ke Berita\',
     ]));
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004af0000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002d60000000000000000";}}',
         'as' => 'landing.news.detail',
       ),
       'fallback' => false,
@@ -1491,7 +1492,7 @@ app('router')->setCompiledRoutes(
         \'backUrl\' => \\route(\'landing.gallery.index\'),
         \'backLabel\' => \'Kembali ke Galeri\',
     ]));
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004b10000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002d80000000000000000";}}',
         'as' => 'landing.gallery.detail',
       ),
       'fallback' => false,
@@ -1574,7 +1575,7 @@ app('router')->setCompiledRoutes(
         \'backUrl\' => \\url(\'/#team\'),
         \'backLabel\' => \'Kembali ke Team\',
     ]));
-}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000004b30000000000000000";}}',
+}";s:5:"scope";s:47:"Illuminate\\Foundation\\Console\\RouteCacheCommand";s:4:"this";N;s:4:"self";s:32:"00000000000002da0000000000000000";}}',
         'as' => 'landing.team.detail',
       ),
       'fallback' => false,
@@ -1607,7 +1608,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000004b60000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000002dd0000000000000000";}}',
         'as' => 'storage.local',
       ),
       'fallback' => false,
@@ -1640,7 +1641,7 @@ app('router')->setCompiledRoutes(
                         $config,
                         $isProduction
                     ))($request, $path);
-                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000004b80000000000000000";}}',
+                }";s:5:"scope";s:47:"Illuminate\\Filesystem\\FilesystemServiceProvider";s:4:"this";N;s:4:"self";s:32:"00000000000002df0000000000000000";}}',
         'as' => 'storage.local.upload',
       ),
       'fallback' => false,

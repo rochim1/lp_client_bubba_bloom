@@ -842,6 +842,38 @@
             line-height: var(--leading-normal);
         }
 
+        .contact-socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-top: 4px;
+        }
+
+        .contact-card .contact-social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 42px;
+            padding: 9px 14px;
+            border: 1px solid rgba(118, 37, 70, 0.16);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .contact-card .contact-social-link:hover,
+        .contact-card .contact-social-link:focus-visible {
+            transform: translateY(-2px);
+            border-color: rgba(118, 37, 70, 0.32);
+            background: #fff;
+            text-decoration: none;
+        }
+
+        .contact-social-link i {
+            font-size: 1.15rem;
+        }
+
         .footer {
             text-align: center;
             padding: 28px 0 12px;
@@ -2977,6 +3009,34 @@
                     $primaryEmail = $contact['emails'][0] ?? null;
                     $phoneNumber = $primaryPhone['whatsappUrl'] ?? $primaryPhone['number'] ?? $hero['contact']['whatsapp'] ?? $hero['contact']['phone'] ?? '+6282280449967';
                     $emailAddress = $primaryEmail['email'] ?? $hero['contact']['email'] ?? 'bubba.bloom@gmail.com';
+                    $socialPlatformMeta = [
+                        'instagram' => ['label' => 'Instagram', 'icon' => 'ri-instagram-line'],
+                        'facebook' => ['label' => 'Facebook', 'icon' => 'ri-facebook-circle-line'],
+                        'tiktok' => ['label' => 'TikTok', 'icon' => 'ri-tiktok-line'],
+                        'youtube' => ['label' => 'YouTube', 'icon' => 'ri-youtube-line'],
+                        'linkedin' => ['label' => 'LinkedIn', 'icon' => 'ri-linkedin-box-line'],
+                        'x' => ['label' => 'X / Twitter', 'icon' => 'ri-twitter-x-line'],
+                        'twitter' => ['label' => 'Twitter', 'icon' => 'ri-twitter-x-line'],
+                        'telegram' => ['label' => 'Telegram', 'icon' => 'ri-telegram-line'],
+                        'whatsapp' => ['label' => 'WhatsApp', 'icon' => 'ri-whatsapp-line'],
+                        'website' => ['label' => 'Website', 'icon' => 'ri-global-line'],
+                    ];
+                    $contactSocialLinks = [];
+                    foreach (($contact['socialMedia'] ?? []) as $social) {
+                        $socialUrl = trim((string) ($social['url'] ?? ''));
+                        $socialScheme = strtolower((string) parse_url($socialUrl, PHP_URL_SCHEME));
+                        if (!$socialUrl || !in_array($socialScheme, ['http', 'https'], true)) {
+                            continue;
+                        }
+
+                        $platform = strtolower((string) ($social['platform'] ?? ''));
+                        $meta = $socialPlatformMeta[$platform] ?? ['label' => ucfirst($platform ?: 'Social Media'), 'icon' => 'ri-links-line'];
+                        $contactSocialLinks[] = [
+                            'url' => $socialUrl,
+                            'label' => $social['label'] ?: $meta['label'],
+                            'icon' => $social['icon'] ?: $meta['icon'],
+                        ];
+                    }
                 @endphp
                 <p>Hubungi {{ $hero['contact']['name'] ?? 'Bdn. Nuning J S N, S.Keb., CHE.' }} untuk jadwal perawatan kehamilan, nifas, dan bayi.</p>
                 @if(!empty($contact['address']['fullAddress']))
@@ -2986,6 +3046,22 @@
                 <a href="{{ str_starts_with($phoneNumber, 'http') ? $phoneNumber : 'tel:' . $phoneNumber }}">Telepon/WA: {{ $primaryPhone['displayNumber'] ?? $phoneNumber }}</a>
                 @if(!empty($contact['address']['googleMapsLink']))
                     <a href="{{ $contact['address']['googleMapsLink'] }}">Buka Google Maps</a>
+                @endif
+                @if(!empty($contactSocialLinks))
+                    <div class="contact-socials" aria-label="Sosial media">
+                        @foreach($contactSocialLinks as $socialLink)
+                            <a
+                                class="contact-social-link"
+                                href="{{ $socialLink['url'] }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Buka {{ $socialLink['label'] }}"
+                            >
+                                <i class="{{ $socialLink['icon'] }}" aria-hidden="true"></i>
+                                <span>{{ $socialLink['label'] }}</span>
+                            </a>
+                        @endforeach
+                    </div>
                 @endif
             </div>
         </section>

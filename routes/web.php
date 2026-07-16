@@ -272,6 +272,7 @@ Route::get('/', function () {
             address { fullAddress googleMapsLink }
             phones { type number displayNumber isWhatsapp whatsappUrl }
             emails { type email }
+            socialMedia { platform label url icon }
           }
           GetActivePopups {
             _id
