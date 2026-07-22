@@ -233,6 +233,37 @@ Route::get('/', function () {
               textColor
               openInNewTab
             }
+            footer {
+              enabled
+              showLogo
+              showTagline
+              showDescription
+              description
+              showNavigation
+              navigationTitle
+              showContact
+              contactTitle
+              showAddress
+              showPhone
+              showEmail
+              showSocialMedia
+              showMapLink
+              links {
+                key
+                label
+                url
+                group
+                enabled
+                openInNewTab
+                order
+              }
+              copyrightText
+              additionalText
+              backgroundColor
+              textColor
+              headingColor
+              linkColor
+            }
           }
           GetOneAboutUs(filter: $aboutFilter) {
             companyInfo {
@@ -552,9 +583,12 @@ Route::get('/', function () {
         'testimonials' => $testimonials,
         'brandName' => $brandName,
         'brandLogo' => $brandLogo,
+        'brandTagline' => $websiteSetting['tagline'] ?? ($aboutData['companyInfo']['tagline'] ?? ''),
+        'websiteDescription' => $websiteSetting['description'] ?? ($aboutData['companyInfo']['description'] ?? ''),
         'siteIcon' => $siteIcon,
         'mediaUrl' => $resolveMediaUrl,
         'floatingButtons' => $floatingButtons,
+        'footer' => $websiteSetting['footer'] ?? [],
         'seo' => $seo,
         'activePopups' => is_array($activePopups) ? $activePopups : [],
     ]);

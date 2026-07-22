@@ -1757,6 +1757,202 @@
             color: var(--color-copy);
         }
 
+        .footer.landing-footer {
+            width: 100%;
+            max-width: none;
+            margin: 40px 0 -56px;
+            padding: 0;
+            color: var(--footer-text);
+            text-align: left;
+            background: var(--footer-bg);
+            border-radius: 34px 34px 0 0;
+            overflow: hidden;
+        }
+
+        .landing-footer__inner {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 56px 0 24px;
+        }
+
+        .landing-footer__grid {
+            display: grid;
+            grid-template-columns: minmax(240px, 1.5fr) repeat(2, minmax(180px, 1fr));
+            gap: clamp(28px, 5vw, 72px);
+        }
+
+        .landing-footer__brand,
+        .landing-footer__column {
+            min-width: 0;
+        }
+
+        .landing-footer__brand img {
+            width: 72px;
+            height: 58px;
+            padding: 5px;
+            margin-bottom: 14px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.94);
+        }
+
+        .landing-footer h2,
+        .landing-footer h3 {
+            margin: 0;
+            color: var(--footer-heading);
+            font-family: var(--font-heading);
+        }
+
+        .landing-footer h2 {
+            font-size: clamp(1.45rem, 2.5vw, 2rem);
+            line-height: 1.15;
+        }
+
+        .landing-footer h3 {
+            margin-bottom: 18px;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .landing-footer p,
+        .landing-footer a {
+            font-size: var(--text-sm);
+            line-height: 1.65;
+        }
+
+        .landing-footer p {
+            margin: 10px 0 0;
+            color: var(--footer-text);
+        }
+
+        .landing-footer__tagline {
+            color: var(--footer-link) !important;
+            font-weight: 700;
+        }
+
+        .landing-footer__column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .landing-footer a {
+            color: var(--footer-link);
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .landing-footer a:hover,
+        .landing-footer a:focus-visible {
+            color: var(--footer-heading);
+            text-decoration: underline;
+        }
+
+        .landing-footer__contact p,
+        .landing-footer__contact > a {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            margin: 0;
+        }
+
+        .landing-footer__contact i {
+            flex: 0 0 auto;
+            margin-top: 3px;
+            font-size: 1.05rem;
+        }
+
+        .landing-footer__socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-top: 8px;
+        }
+
+        .landing-footer__socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border: 1px solid color-mix(in srgb, var(--footer-link) 38%, transparent);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .landing-footer__socials i {
+            margin: 0;
+        }
+
+        .landing-footer__additional {
+            margin-top: 34px !important;
+            padding: 16px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .landing-footer__bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            margin-top: 34px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .landing-footer__bottom p {
+            margin: 0;
+        }
+
+        .landing-footer__bottom nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 10px 20px;
+        }
+
+        @media (max-width: 820px) {
+            .landing-footer__grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .landing-footer__brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .footer.landing-footer {
+                border-radius: 24px 24px 0 0;
+            }
+
+            .landing-footer__inner {
+                width: min(100% - 28px, 1180px);
+                padding-top: 40px;
+            }
+
+            .landing-footer__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .landing-footer__brand {
+                grid-column: auto;
+            }
+
+            .landing-footer__bottom {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .landing-footer__bottom nav {
+                justify-content: flex-start;
+            }
+        }
+
         a:focus-visible,
         button:focus-visible,
         input:focus-visible,
@@ -3066,9 +3262,154 @@
             </div>
         </section>
 
-        <footer class="footer">
-            &copy; {{ date('Y') }} Bubba Bloom - Mom & Baby Care. Semua hak dilindungi.
-        </footer>
+        @php
+            $footerSettings = array_merge([
+                'enabled' => true,
+                'showLogo' => true,
+                'showTagline' => true,
+                'showDescription' => true,
+                'description' => '',
+                'showNavigation' => true,
+                'navigationTitle' => 'Tautan Cepat',
+                'showContact' => true,
+                'contactTitle' => 'Hubungi Kami',
+                'showAddress' => true,
+                'showPhone' => true,
+                'showEmail' => true,
+                'showSocialMedia' => true,
+                'showMapLink' => true,
+                'links' => [
+                    ['key' => 'home', 'label' => 'Beranda', 'url' => '#home', 'group' => 'navigation', 'enabled' => true, 'openInNewTab' => false, 'order' => 1],
+                    ['key' => 'about', 'label' => 'Tentang Kami', 'url' => '#about', 'group' => 'navigation', 'enabled' => true, 'openInNewTab' => false, 'order' => 2],
+                    ['key' => 'services', 'label' => 'Layanan', 'url' => '#services', 'group' => 'navigation', 'enabled' => true, 'openInNewTab' => false, 'order' => 3],
+                    ['key' => 'gallery', 'label' => 'Galeri', 'url' => '#gallery', 'group' => 'navigation', 'enabled' => true, 'openInNewTab' => false, 'order' => 4],
+                    ['key' => 'contact', 'label' => 'Kontak', 'url' => '#contact', 'group' => 'navigation', 'enabled' => true, 'openInNewTab' => false, 'order' => 5],
+                ],
+                'copyrightText' => '© {year} {siteName}. Semua hak dilindungi.',
+                'additionalText' => '',
+                'backgroundColor' => '#4e233b',
+                'textColor' => '#f8eaf1',
+                'headingColor' => '#ffffff',
+                'linkColor' => '#ffd7e7',
+            ], is_array($footer ?? null) ? $footer : []);
+
+            $safeFooterColor = static fn ($value, $fallback) => preg_match('/^#[0-9a-f]{6}$/i', (string) $value) ? $value : $fallback;
+            $safeFooterUrl = static function ($value) {
+                $url = trim((string) $value);
+                if ($url === '' || preg_match('/[\x00-\x1F\x7F]/', $url)) {
+                    return null;
+                }
+                if (str_starts_with($url, '#') || str_starts_with($url, '/')) {
+                    return $url;
+                }
+                $scheme = strtolower((string) parse_url($url, PHP_URL_SCHEME));
+                return in_array($scheme, ['http', 'https', 'mailto', 'tel'], true) ? $url : null;
+            };
+
+            $footerLinks = collect($footerSettings['links'] ?? [])
+                ->filter(fn ($link) => ($link['enabled'] ?? true) !== false && $safeFooterUrl($link['url'] ?? null))
+                ->sortBy(fn ($link) => (int) ($link['order'] ?? 0));
+            $footerNavigationLinks = $footerLinks->where('group', 'navigation');
+            $footerLegalLinks = $footerLinks->where('group', 'legal');
+            $footerCopyright = str_replace(
+                ['{year}', '{siteName}'],
+                [date('Y'), $brandName ?? 'Website'],
+                $footerSettings['copyrightText'] ?: '© {year} {siteName}. Semua hak dilindungi.'
+            );
+            $footerPhone = ($contact['phones'][0] ?? null);
+            $footerEmail = ($contact['emails'][0] ?? null);
+            $footerAddress = trim((string) ($contact['address']['fullAddress'] ?? ''));
+            $footerMapUrl = $safeFooterUrl($contact['address']['googleMapsLink'] ?? null);
+            $footerPhoneUrl = $safeFooterUrl($footerPhone['whatsappUrl'] ?? null)
+                ?: (!empty($footerPhone['number']) ? 'tel:' . preg_replace('/[^0-9+]/', '', $footerPhone['number']) : null);
+            $footerSocials = collect($contact['socialMedia'] ?? [])->filter(fn ($social) => $safeFooterUrl($social['url'] ?? null));
+            $footerSocialIcons = [
+                'instagram' => 'ri-instagram-line', 'facebook' => 'ri-facebook-circle-line',
+                'tiktok' => 'ri-tiktok-line', 'youtube' => 'ri-youtube-line',
+                'linkedin' => 'ri-linkedin-box-line', 'x' => 'ri-twitter-x-line',
+                'twitter' => 'ri-twitter-x-line', 'telegram' => 'ri-telegram-line',
+                'whatsapp' => 'ri-whatsapp-line', 'website' => 'ri-global-line',
+            ];
+            $showFooterBrand = ($footerSettings['showLogo'] ?? true)
+                || ($footerSettings['showTagline'] ?? true)
+                || ($footerSettings['showDescription'] ?? true);
+        @endphp
+        @if(($footerSettings['enabled'] ?? true) !== false)
+            <footer
+                class="footer landing-footer"
+                style="--footer-bg: {{ $safeFooterColor($footerSettings['backgroundColor'], '#4e233b') }}; --footer-text: {{ $safeFooterColor($footerSettings['textColor'], '#f8eaf1') }}; --footer-heading: {{ $safeFooterColor($footerSettings['headingColor'], '#ffffff') }}; --footer-link: {{ $safeFooterColor($footerSettings['linkColor'], '#ffd7e7') }};"
+            >
+                <div class="landing-footer__inner">
+                    <div class="landing-footer__grid">
+                        @if($showFooterBrand)
+                            <div class="landing-footer__brand">
+                                @if(($footerSettings['showLogo'] ?? true) && !empty($brandLogo))
+                                    <img src="{{ $brandLogo }}" alt="Logo {{ $brandName }}">
+                                @endif
+                                <h2>{{ $brandName }}</h2>
+                                @if(($footerSettings['showTagline'] ?? true) && !empty($brandTagline))
+                                    <p class="landing-footer__tagline">{{ $brandTagline }}</p>
+                                @endif
+                                @if($footerSettings['showDescription'] ?? true)
+                                    <p>{{ $footerSettings['description'] ?: ($websiteDescription ?? '') }}</p>
+                                @endif
+                            </div>
+                        @endif
+
+                        @if(($footerSettings['showNavigation'] ?? true) && $footerNavigationLinks->isNotEmpty())
+                            <nav class="landing-footer__column" aria-label="Navigasi footer">
+                                <h3>{{ $footerSettings['navigationTitle'] ?: 'Tautan Cepat' }}</h3>
+                                @foreach($footerNavigationLinks as $link)
+                                    <a href="{{ $safeFooterUrl($link['url']) }}" @if($link['openInNewTab'] ?? false) target="_blank" rel="noopener noreferrer" @endif>{{ $link['label'] }}</a>
+                                @endforeach
+                            </nav>
+                        @endif
+
+                        @if($footerSettings['showContact'] ?? true)
+                            <div class="landing-footer__column landing-footer__contact">
+                                <h3>{{ $footerSettings['contactTitle'] ?: 'Hubungi Kami' }}</h3>
+                                @if(($footerSettings['showAddress'] ?? true) && $footerAddress)
+                                    <p><i class="ri-map-pin-line" aria-hidden="true"></i><span>{{ $footerAddress }}</span></p>
+                                @endif
+                                @if(($footerSettings['showPhone'] ?? true) && $footerPhoneUrl)
+                                    <a href="{{ $footerPhoneUrl }}"><i class="ri-phone-line" aria-hidden="true"></i><span>{{ $footerPhone['displayNumber'] ?? $footerPhone['number'] }}</span></a>
+                                @endif
+                                @if(($footerSettings['showEmail'] ?? true) && !empty($footerEmail['email']))
+                                    <a href="mailto:{{ $footerEmail['email'] }}"><i class="ri-mail-line" aria-hidden="true"></i><span>{{ $footerEmail['email'] }}</span></a>
+                                @endif
+                                @if(($footerSettings['showMapLink'] ?? true) && $footerMapUrl)
+                                    <a href="{{ $footerMapUrl }}" target="_blank" rel="noopener noreferrer"><i class="ri-route-line" aria-hidden="true"></i><span>Buka Google Maps</span></a>
+                                @endif
+                                @if(($footerSettings['showSocialMedia'] ?? true) && $footerSocials->isNotEmpty())
+                                    <div class="landing-footer__socials" aria-label="Sosial media">
+                                        @foreach($footerSocials as $social)
+                                            @php $footerPlatform = strtolower((string) ($social['platform'] ?? '')); @endphp
+                                            <a href="{{ $safeFooterUrl($social['url']) }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $social['label'] ?: ucfirst($footerPlatform ?: 'Sosial media') }}">
+                                                <i class="{{ $social['icon'] ?: ($footerSocialIcons[$footerPlatform] ?? 'ri-links-line') }}" aria-hidden="true"></i>
+                                            </a>
+                                        @endforeach
+                                    </div>
+                                @endif
+                            </div>
+                        @endif
+                    </div>
+
+                    @if(!empty($footerSettings['additionalText']))
+                        <p class="landing-footer__additional">{{ $footerSettings['additionalText'] }}</p>
+                    @endif
+                    <div class="landing-footer__bottom">
+                        <p>{{ $footerCopyright }}</p>
+                        @if($footerLegalLinks->isNotEmpty())
+                            <nav aria-label="Tautan legal">
+                                @foreach($footerLegalLinks as $link)
+                                    <a href="{{ $safeFooterUrl($link['url']) }}" @if($link['openInNewTab'] ?? false) target="_blank" rel="noopener noreferrer" @endif>{{ $link['label'] }}</a>
+                                @endforeach
+                            </nav>
+                        @endif
+                    </div>
+                </div>
+            </footer>
+        @endif
     </div>
     @include('partials.floating-buttons', ['floatingButtons' => $floatingButtons ?? []])
     @include('partials.active-popups', ['activePopups' => $activePopups ?? []])
