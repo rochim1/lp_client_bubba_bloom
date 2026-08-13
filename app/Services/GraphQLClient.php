@@ -28,6 +28,7 @@ class GraphQLClient
             'Content-Type' => 'application/json',
             'apps' => config('landing.graphql.apps_header', 'landing'),
             'lang' => config('landing.graphql.lang', 'id'),
+            'x-client-origin' => request()->getSchemeAndHttpHost(),
         ];
 
         if ($instansiId) {
