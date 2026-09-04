@@ -131,7 +131,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'D:\\my node app\\zera\\landing_page_client\\database\\database.sqlite',
+        'database' => 'D:\\my node app\\zera\\landing_page_pondok\\database\\database.sqlite',
         'prefix' => '',
         'prefix_indexes' => NULL,
         'foreign_key_constraints' => true,
@@ -262,7 +262,7 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\my node app\\zera\\landing_page_client\\storage\\app/private',
+        'root' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\app/private',
         'serve' => true,
         'throw' => false,
         'report' => false,
@@ -270,7 +270,7 @@
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\my node app\\zera\\landing_page_client\\storage\\app/public',
+        'root' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -292,7 +292,7 @@
     ),
     'links' => 
     array (
-      'D:\\my node app\\zera\\landing_page_client\\public\\storage' => 'D:\\my node app\\zera\\landing_page_client\\storage\\app/public',
+      'D:\\my node app\\zera\\landing_page_pondok\\public\\storage' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -335,14 +335,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\my node app\\zera\\landing_page_client\\storage\\logs/laravel.log',
+        'path' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\my node app\\zera\\landing_page_client\\storage\\logs/laravel.log',
+        'path' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -407,7 +407,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\my node app\\zera\\landing_page_client\\storage\\logs/laravel.log',
+        'path' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -485,7 +485,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\my node app\\zera\\landing_page_client\\resources\\views/vendor/mail',
+        0 => 'D:\\my node app\\zera\\landing_page_pondok\\resources\\views/vendor/mail',
       ),
       'extensions' => 
       array (
@@ -589,14 +589,6 @@
         'channel' => NULL,
       ),
     ),
-  ),
-  'view' => 
-  array (
-    'paths' => 
-    array (
-      0 => 'D:\\my node app\\zera\\landing_page_client\\resources\\views',
-    ),
-    'compiled' => 'D:\\my node app\\zera\\landing_page_client\\storage\\framework\\views',
   ),
   'app' => 
   array (
@@ -722,8 +714,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\my node app\\zera\\landing_page_client\\storage\\framework/cache/data',
-        'lock_path' => 'D:\\my node app\\zera\\landing_page_client\\storage\\framework/cache/data',
+        'path' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\framework/cache/data',
+        'lock_path' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -780,7 +772,7 @@
   ),
   'landing' => 
   array (
-    'instansi_id' => '6a53be1c1ea8262aa860ad3d',
+    'instansi_id' => '6a98fe7b1ee5fceb0ae0e7fc',
     'graphql' => 
     array (
       'endpoint' => 'http://localhost:8080/graphql',
@@ -809,7 +801,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\my node app\\zera\\landing_page_client\\storage\\framework/sessions',
+    'files' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -825,5 +817,13 @@
     'http_only' => true,
     'same_site' => 'lax',
     'partitioned' => false,
+  ),
+  'view' => 
+  array (
+    'paths' => 
+    array (
+      0 => 'D:\\my node app\\zera\\landing_page_pondok\\resources\\views',
+    ),
+    'compiled' => 'D:\\my node app\\zera\\landing_page_pondok\\storage\\framework/views',
   ),
 );

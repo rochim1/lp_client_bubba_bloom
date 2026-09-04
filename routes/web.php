@@ -497,45 +497,45 @@ Route::get('/', function () {
         }
 
         $hero = [
-            'badge' => ['emoji' => '🌸', 'text' => $aboutData['heroSection']['badge'] ?? 'Bubba Bloom - Mom & Baby Care', 'bgColor' => '#f9d5e5', 'textColor' => '#7b1d4f'],
-            'heading' => ['part1' => $aboutData['heroSection']['titlePrefix'] ?? 'Homecare Mom & Baby', 'part2' => $aboutData['heroSection']['highlightedTitle'] ?? 'Pregnancy, Postnatal & Kids'],
-            'description' => $aboutData['heroSection']['subtitle'] ?? $aboutData['companyInfo']['tagline'] ?? 'Perawatan homecare untuk ibu hamil, nifas, newborn, bayi, dan anak dengan sentuhan lembut yang dirancang untuk kenyamanan keluarga Anda.',
+            'badge' => ['emoji' => '📖', 'text' => $aboutData['heroSection']['badge'] ?? 'Pondok Tahfidz Al-Qur’an', 'bgColor' => '#e8f9fc', 'textColor' => '#082f55'],
+            'heading' => ['part1' => $aboutData['heroSection']['titlePrefix'] ?? 'Dekat dengan Al-Qur’an', 'part2' => $aboutData['heroSection']['highlightedTitle'] ?? 'Mulia dalam Kehidupan'],
+            'description' => $aboutData['heroSection']['subtitle'] ?? $aboutData['companyInfo']['tagline'] ?? 'Pendidikan tahfidz yang memadukan hafalan Al-Qur’an, pemahaman agama, adab, dan kemandirian dalam lingkungan pondok yang hangat.',
             'buttons' => !empty($buttons) ? $buttons : [
-                ['text' => 'Reservasi WA', 'link' => '#contact', 'type' => 'primary'],
-                ['text' => 'Lihat Layanan', 'link' => '#services', 'type' => 'secondary'],
+                ['text' => 'Informasi Pendaftaran', 'link' => '#contact', 'type' => 'primary'],
+                ['text' => 'Lihat Program', 'link' => '#program', 'type' => 'secondary'],
             ],
             'background' => ['image' => $aboutData['heroSection']['backgroundImage'] ?? '/images/hero-mom-baby-care.jpg', 'overlay' => 'rgba(255, 255, 255, 0.65)', 'position' => 'center', 'size' => 'cover'],
             'layout' => ['type' => 'center', 'mascot' => ['image' => '', 'width' => 120, 'alignment' => 'center']],
             'stats' => is_array($aboutData['statistics']) ? $aboutData['statistics'] : [],
             'contact' => [
-                'name' => $contactData['phones'][0]['type'] ?? 'Bdn. Nuning',
-                'phone' => $contactData['phones'][0]['number'] ?? '+6282280449967',
-                'whatsapp' => $contactData['phones'][0]['whatsappUrl'] ?? '+6282280449967',
-                'email' => $contactData['emails'][0]['email'] ?? 'bubba.bloom@gmail.com',
+                'name' => $contactData['phones'][0]['type'] ?? 'Admin Pondok',
+                'phone' => $contactData['phones'][0]['number'] ?? '',
+                'whatsapp' => $contactData['phones'][0]['whatsappUrl'] ?? '',
+                'email' => $contactData['emails'][0]['email'] ?? '',
             ],
         ];
     }
 
     if (!$hero) {
         $hero = [
-            'badge' => ['emoji' => '🌸', 'text' => 'Bubba Bloom - Mom & Baby Care', 'bgColor' => '#f9d5e5', 'textColor' => '#7b1d4f'],
-            'heading' => ['part1' => 'Homecare Mom & Baby', 'part2' => 'Pregnancy, Postnatal & Kids'],
-            'description' => 'Layanan homecare pijat oleh Bdn. Nuning J S N, S.Keb., CHE. untuk ibu hamil, nifas, newborn, bayi, dan anak.',
+            'badge' => ['emoji' => '📖', 'text' => 'Pondok Tahfidz Al-Qur’an', 'bgColor' => '#e8f9fc', 'textColor' => '#082f55'],
+            'heading' => ['part1' => 'Dekat dengan Al-Qur’an', 'part2' => 'Mulia dalam Kehidupan'],
+            'description' => 'Pendidikan tahfidz yang memadukan hafalan Al-Qur’an, pemahaman agama, adab, dan kemandirian dalam lingkungan pondok yang hangat.',
             'buttons' => [
-                ['text' => 'Reservasi WA', 'link' => 'https://wa.me/6282280449967', 'type' => 'primary'],
-                ['text' => 'Lihat Layanan', 'link' => '#services', 'type' => 'secondary'],
+                ['text' => 'Informasi Pendaftaran', 'link' => '#contact', 'type' => 'primary'],
+                ['text' => 'Lihat Program', 'link' => '#program', 'type' => 'secondary'],
             ],
             'background' => ['image' => '/images/hero-mom-baby-care.jpg', 'overlay' => 'rgba(255, 255, 255, 0.65)', 'position' => 'center', 'size' => 'cover'],
             'layout' => ['type' => 'center', 'mascot' => ['image' => '', 'width' => 120, 'alignment' => 'center']],
             'stats' => [
-                ['value' => 120, 'label' => 'Anak Bahagia', 'suffixLabel' => '+'],
-                ['value' => 10, 'label' => 'Tahun Pengalaman', 'suffixLabel' => '+'],
+                ['value' => 30, 'label' => 'Target Hafalan', 'suffixLabel' => ' Juz'],
+                ['value' => 24, 'label' => 'Lingkungan Qur’ani', 'suffixLabel' => ' Jam'],
             ],
             'contact' => [
-                'name' => 'Bdn. Nuning',
-                'phone' => '+6282280449967',
-                'whatsapp' => '+6282280449967',
-                'email' => 'bubba.bloom@gmail.com',
+                'name' => 'Admin Pondok',
+                'phone' => '',
+                'whatsapp' => '',
+                'email' => '',
             ],
         ];
     }
@@ -559,7 +559,7 @@ Route::get('/', function () {
 
     $defaultBrandLogo = landing_instansi_logo();
     $brandName = ($websiteSetting['siteName'] ?? null)
-        ?: ($aboutData['companyInfo']['name'] ?? 'Bubba Bloom - Mom & Baby Care');
+        ?: ($aboutData['companyInfo']['name'] ?? 'Pondok Pesantren Tahfidzul Qur’an Al-Madinatul Kamilah');
     $brandLogo = !empty($websiteSetting['logo'])
         ? landing_instansi_logo($websiteSetting['logo'])
         : $defaultBrandLogo;
@@ -728,7 +728,7 @@ Route::get('/galeri', function () {
         'type' => 'gallery',
         'eyebrow' => 'Galeri',
         'title' => 'Koleksi Foto & Video',
-        'description' => 'Feed visual layanan homecare, treatment ibu dan anak, serta aktivitas Bubba Bloom.',
+        'description' => 'Dokumentasi kegiatan belajar, ibadah, dan kebersamaan santri Al-Madinatul Kamilah.',
         'items' => $items,
         'emptyTitle' => 'Belum ada media galeri.',
         'emptyDescription' => 'Foto dan video aktif dari modul Galeri akan tampil di halaman ini.',
@@ -817,7 +817,7 @@ Route::get('/faq', function () {
         'type' => 'faq',
         'eyebrow' => 'FAQ',
         'title' => 'Pertanyaan yang Sering Diajukan',
-        'description' => 'Jawaban ringkas untuk pertanyaan umum sebelum memesan layanan Bubba Bloom.',
+        'description' => 'Jawaban ringkas untuk pertanyaan umum tentang program dan pendaftaran pondok.',
         'items' => $items,
         'total' => $total,
         'filters' => [
