@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'instansi_id' => env('LANDING_INSTANSI_ID', '6a98fe7b1ee5fceb0ae0e7fc'),
+    'instansi_id' => env('LANDING_INSTANSI_ID', '6a53be1c1ea8262aa860ad3d'),
     'graphql' => [
         'endpoint' => env('GRAPHQL_ENDPOINT', 'http://localhost:8080/graphql'),
         'token' => env('LANDING_GRAPHQL_TOKEN'),

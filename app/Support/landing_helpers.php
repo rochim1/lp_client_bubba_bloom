@@ -4,7 +4,7 @@ use App\Services\GraphQLClient;
 
 function landing_instansi_id(): string
 {
-    return (string) config('landing.instansi_id', '6a98fe7b1ee5fceb0ae0e7fc');
+    return (string) config('landing.instansi_id', '6a53be1c1ea8262aa860ad3d');
 }
 
 function landing_backend_base_url(): string
@@ -66,7 +66,7 @@ function landing_instansi_logo(?string $logo = null): string
         }
     }
 
-    return asset('logo/al-madinatul-kamilah.png');
+    return asset('logo/logo.jpeg');
 }
 
 function landing_default_floating_buttons(): array
@@ -78,8 +78,8 @@ function landing_default_floating_buttons(): array
             'label' => 'WhatsApp',
             'icon' => 'ri-whatsapp-line',
             'url' => '',
-            'phone' => '',
-            'message' => 'Assalamu’alaikum, saya ingin memperoleh informasi tentang program dan pendaftaran santri.',
+            'phone' => '+6282280449967',
+            'message' => 'Halo Bubba Bloom, saya ingin reservasi layanan.',
             'enabled' => true,
             'position' => 'bottom_right',
             'order' => 1,
@@ -98,7 +98,7 @@ function landing_default_floating_buttons(): array
             'enabled' => true,
             'position' => 'bottom_right',
             'order' => 2,
-            'bgColor' => '#082f55',
+            'bgColor' => '#7f2f53',
             'textColor' => '#ffffff',
             'openInNewTab' => false,
         ],

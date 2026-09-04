@@ -1,11 +1,11 @@
 @php
     $seoData = is_array($seo ?? null) ? $seo : [];
-    $currentBrand = $brandName ?? ($seoData['organizationName'] ?? 'Pondok Pesantren Tahfidzul Qur’an Al-Madinatul Kamilah');
+    $currentBrand = $brandName ?? ($seoData['organizationName'] ?? 'Bubba Bloom - Mom & Baby Care');
     $hasPageTitle = !empty($title ?? null);
     $pageTitle = $hasPageTitle
         ? trim($title . ' - ' . $currentBrand)
         : (($seoData['metaTitle'] ?? null) ?: $currentBrand);
-    $defaultDescription = 'Pondok tahfidz Al-Qur’an yang membina generasi berilmu, beradab, mandiri, dan bermanfaat bagi umat.';
+    $defaultDescription = 'Layanan homecare untuk ibu hamil, ibu nifas, bayi, dan anak bersama Bubba Bloom Mom & Baby Care.';
     $pageDescription = trim(strip_tags((string) (($description ?? null) ?: (($seoData['metaDescription'] ?? null) ?: $defaultDescription))));
     $configuredCanonical = trim((string) ($seoData['canonicalUrl'] ?? ''));
     $canonicalBase = rtrim($configuredCanonical, '/');
@@ -37,7 +37,7 @@
         ? $openGraphDescription
         : (($seoData['twitterDescription'] ?? null) ?: $openGraphDescription);
     $twitterImage = $absoluteUrl(($seoData['twitterImage'] ?? null) ?: $pageImage);
-    $faviconUrl = $absoluteUrl(($siteIcon ?? null) ?: ($brandLogo ?? asset('logo/al-madinatul-kamilah.png')));
+    $faviconUrl = $absoluteUrl(($siteIcon ?? null) ?: ($brandLogo ?? asset('logo/logo.jpeg')));
     $robots = (($seoData['robotsIndex'] ?? true) ? 'index' : 'noindex') . ', ' . (($seoData['robotsFollow'] ?? true) ? 'follow' : 'nofollow');
     $schemaType = $seoData['schemaType'] ?? 'Organization';
     $organizationName = ($seoData['organizationName'] ?? null) ?: $currentBrand;
