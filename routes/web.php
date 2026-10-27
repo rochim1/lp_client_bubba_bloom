@@ -388,6 +388,7 @@ Route::get('/', function () {
             'visibility' => 'public',
         ],
         'newsFilter' => [
+            'lang' => 'IND',
             'status' => 'published',
             'visibility' => 'public',
             'instansi_id' => $instansiId,
